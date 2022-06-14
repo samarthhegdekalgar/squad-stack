@@ -1,3 +1,4 @@
+import { endpoints } from '@/constants/endpoints';
 import { globalFetch } from '@/network/globalFetch';
 
 export interface RecommendedJobsResponseType {
@@ -17,20 +18,6 @@ export const fetchRecommendedJobs = async ({
   offset: number;
 }): Promise<RecommendedJobsResponseType[]> => {
   return globalFetch<RecommendedJobsResponseType[]>(
-    `https://mockend.com/nillion/frontend-challenge/jobs?limit=${limit}&offset=${offset}`
+    `${endpoints.recommendedJobs}?limit=${limit}&offset=${offset}`
   );
-  // return new Promise<RecommendedJobsResponseType[]>((resolve) => {
-  //   resolve(Array(10).fill(
-  //     {
-  //       businessLogo: "https://i.pravatar.cc",
-  //     }
-  //   ).map((each, index) => ({
-  //     ...each,
-  //     businessName: `Business ${index}`,
-  //     earnings: 100,
-  //     estimatedTime: Math.floor(Math.random() * 10),
-  //     id: index,
-  //     title: `Job ${index}`
-  //   })))
-  // })
 };

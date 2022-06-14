@@ -1,7 +1,7 @@
 import React from 'react';
 import { VisibilityContext } from 'react-horizontal-scrolling-menu';
 
-function Arrow({
+const Arrow = ({
   children,
   disabled,
   onClick,
@@ -11,7 +11,7 @@ function Arrow({
   disabled: boolean;
   onClick: VoidFunction;
   className?: string;
-}) {
+}) => {
   return (
     <button
       disabled={disabled}
@@ -27,9 +27,9 @@ function Arrow({
       {children}
     </button>
   );
-}
+};
 
-export function LeftArrow() {
+export const LeftArrow = () => {
   const {
     isFirstItemVisible,
     scrollPrev,
@@ -66,7 +66,7 @@ export function LeftArrow() {
       </svg>
     </Arrow>
   );
-}
+};
 
 export function RightArrow({
   limit,

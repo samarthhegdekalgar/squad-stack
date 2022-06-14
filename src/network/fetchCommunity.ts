@@ -1,3 +1,4 @@
+import { endpoints } from '@/constants/endpoints';
 import { globalFetch } from '@/network/globalFetch';
 
 export interface CommunityResponseType {
@@ -15,6 +16,6 @@ export const fetchCommunity = async ({
   offset: number;
 }): Promise<CommunityResponseType[]> => {
   return globalFetch<CommunityResponseType[]>(
-    `https://mockend.com/nillion/frontend-challenge/resources?limit=${limit}&offset=${offset}`
+    `${endpoints.community}?limit=${limit}&offset=${offset}`
   );
 };

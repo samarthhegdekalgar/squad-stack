@@ -1,3 +1,4 @@
+import { endpoints } from '@/constants/endpoints';
 import { globalFetch } from '@/network/globalFetch';
 
 export interface AnnouncementResponseType {
@@ -16,6 +17,6 @@ export const fetchAnnouncement = async ({
   offset: number;
 }): Promise<AnnouncementResponseType[]> => {
   return globalFetch<AnnouncementResponseType[]>(
-    `https://mockend.com/nillion/frontend-challenge/announcements?limit=${limit}&offset=${offset}`
+    `${endpoints.announcement}?limit=${limit}&offset=${offset}`
   );
 };

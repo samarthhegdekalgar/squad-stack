@@ -11,6 +11,9 @@ export interface InfiniteScrollerProps<T> {
   limit: number;
   offset: number;
 }
+/**
+ * This hook is used to fetch data from a server and paginate it.
+ */
 export const useInfiniteScroller = <T extends { id: number }>({
   callback,
   limit,
