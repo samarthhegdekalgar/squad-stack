@@ -23,6 +23,11 @@ module.exports = {
           800: 'rgb(var(--tw-color-primary-800) / <alpha-value>)',
           900: 'rgb(var(--tw-color-primary-900) / <alpha-value>)',
         },
+        secondary: {
+          50: 'rgb(var(--tw-color-secondary-50) / <alpha-value>)',
+          100: 'rgb(var(--tw-color-secondary-100) / <alpha-value>)',
+          900: 'rgb(var(--tw-color-secondary-900) / <alpha-value>)',
+        },
         dark: '#222222',
       },
       keyframes: {
@@ -52,5 +57,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require('@tailwindcss/forms')],
+  plugins: [require('@tailwindcss/forms'), require('tailwind-scrollbar-hide')],
 };

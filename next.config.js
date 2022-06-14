@@ -3,7 +3,9 @@ module.exports = {
   eslint: {
     dirs: ['src'],
   },
-
+  images: {
+    domains: ['i.pravatar.cc', 'picsum.photos'],
+  },
   reactStrictMode: true,
 
   // Uncoment to add domain whitelist

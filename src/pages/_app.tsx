@@ -1,16 +1,23 @@
 import { AppProps } from 'next/app';
+import type { FC, ReactElement } from 'react';
 
 import '@/styles/globals.css';
-// !STARTERCONF This is for demo purposes, remove @/styles/colors.css import immediately
 import '@/styles/colors.css';
 
-/**
- * !STARTERCONF info
- * ? `Layout` component is called in every page using `np` snippets. If you have consistent layout across all page, you can add it here too
- */
+type Layout = (page: ReactElement) => ReactElement;
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+interface FCWithLayout extends FC {
+  getLayout?: Layout;
 }
+
+interface CustomAppProps extends AppProps {
+  Component: FCWithLayout;
+}
+
+const MyApp = ({ Component, pageProps }: CustomAppProps) => {
+  const getLayout = Component.getLayout || ((page) => page);
+
+  return getLayout(<Component {...pageProps} />);
+};
 
 export default MyApp;
