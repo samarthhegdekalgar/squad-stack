@@ -6,7 +6,7 @@ import { openGraph } from '@/lib/helper';
 const defaultMeta = {
   title: 'Home',
   siteName: 'Home',
-  description: 'Home pag',
+  description: 'Home page',
   url: '',
   type: 'website',
   robots: 'follow, index',
