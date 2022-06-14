@@ -5,8 +5,8 @@ const Sidebar: FC = () => {
   return (
     <div className='hidden md:fixed md:inset-y-0 md:flex md:w-64 md:flex-col'>
       <div className='flex min-h-0 flex-1 flex-col  bg-white'>
-        <div className='flex flex-1 flex-col overflow-y-auto pt-5 pb-4'>
-          <nav className='mt-5 flex-1 space-y-1 bg-white px-2'>
+        <div className='flex flex-1 flex-col overflow-y-auto pb-4'>
+          <nav className='mt-5 flex-1 space-y-1 bg-white px-4'>
             <Link href='/'>
               <a className='text-gary-900 group flex items-center gap-2 rounded-md bg-stone-200 px-2 py-2 text-sm font-bold'>
                 <svg
